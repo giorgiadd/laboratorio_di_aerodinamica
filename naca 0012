@@ -1,0 +1,19 @@
+filename       = 'data/NACA 0012.dat';
+delimiterIn    = ' ';
+headerlinesIn  = 1;
+format long;
+
+airfoil_struct = importdata(filename,delimiterIn,headerlinesIn);
+
+fields = fieldnames(airfoil_struct);
+coord  = char(fields(1));
+
+airfoil_coord = airfoil_struct.(coord);
+
+figure(1);
+plot(airfoil_coord(:,1),airfoil_coord(:,2),'MarkerSize',20);
+title('naca 0012')
+xlabel('x')
+ylabel('y')
+axis equal;
+hold off;
