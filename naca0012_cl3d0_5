@@ -1,0 +1,193 @@
+filename       = 'data/NACA 0012.dat'; %nome del file da aprire (contiene le cordinate del nostro profilo)
+                                       
+
+delimiterIn    = ' ';  
+headerlinesIn  = 1;    
+format long;
+
+airfoil_struct = importdata(filename,delimiterIn,headerlinesIn);
+
+fields = fieldnames(airfoil_struct);
+
+coord  = char(fields(1));
+
+airfoil_coord = airfoil_struct.(coord);
+
+x = airfoil_coord(:,1);
+y = airfoil_coord(:,2);
+npoints=length(x)
+
+subplot(2,3,1)
+%figure1
+filename='data/MainWing_a=0.00_v=10.00ms.txt'
+delimiterIn    = ' ';
+headerlinesIn  = 21;  
+
+airfoil_struct = importdata(filename,delimiterIn,headerlinesIn);
+fields = fieldnames(airfoil_struct);
+coord  = char(fields(1));
+
+airfoil_coord = airfoil_struct.(coord)
+s = airfoil_coord(:,1); %sezioni
+cl = airfoil_coord(:,4); %cl di ogni sezione
+npoints=length(x)
+cl0=0.00
+plot(s,cl,'MarkerSize',20);
+title('alpha=0')
+xlabel('sezioni ala')
+ylabel('cl')
+hold on
+
+plot(s,cl0,'.','MarkerSize',20);
+hold on
+CL0=0.000000
+plot(s,CL0,'.','MarkerSize',20);
+hold off
+legend('Cl vs s','cl0','CL0')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+subplot(2,3,2)
+%figure2
+filename='data/MainWing_a=1.00_v=10.00ms.txt'
+delimiterIn    = ' ';
+headerlinesIn  = 21;  
+
+airfoil_struct = importdata(filename,delimiterIn,headerlinesIn);
+fields = fieldnames(airfoil_struct);
+coord  = char(fields(1));
+
+airfoil_coord = airfoil_struct.(coord)
+s = airfoil_coord(:,1); %sezioni
+cl = airfoil_coord(:,4); %cl di ogni sezione
+npoints=length(x)
+cl1=0.120822042802605
+plot(s,cl,'MarkerSize',20);
+title('alpha=1')
+xlabel('sezioni ala')
+ylabel('cl')
+hold on
+plot(s,cl1,'.','MarkerSize',20);
+hold on
+CL1=0.087163
+plot(s,CL1,'.','MarkerSize',20);
+hold off
+legend('Cl vs s','cl0','CL0')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+subplot(2,3,3)
+%figure3
+filename='data/MainWing_a=2.00_v=10.00ms.txt'
+delimiterIn    = ' ';
+headerlinesIn  = 21;  
+
+airfoil_struct = importdata(filename,delimiterIn,headerlinesIn);
+fields = fieldnames(airfoil_struct);
+coord  = char(fields(1));
+
+airfoil_coord = airfoil_struct.(coord)
+s = airfoil_coord(:,1); %sezioni
+cl = airfoil_coord(:,4); %cl di ogni sezione
+npoints=length(x)
+cl2=0.241600200956812
+plot(s,cl,'MarkerSize',20);
+title('alpha=2')
+xlabel('sezioni ala')
+ylabel('cl')
+hold on
+plot(s,cl2, '.','MarkerSize',20);
+hold on
+CL2=0.174276
+plot(s,CL2,'.','MarkerSize',20);
+hold off
+legend('Cl vs s','cl0','CL0')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+subplot(2,3,4)
+%figure4
+filename='data/MainWing_a=3.00_v=10.00ms.txt'
+delimiterIn    = ' ';
+headerlinesIn  = 21;  
+
+airfoil_struct = importdata(filename,delimiterIn,headerlinesIn);
+fields = fieldnames(airfoil_struct);
+coord  = char(fields(1));
+
+airfoil_coord = airfoil_struct.(coord)
+s = airfoil_coord(:,1); %sezioni
+cl = airfoil_coord(:,4); %cl di ogni sezione
+npoints=length(x)
+cl3=0.361706378153158
+plot(s,cl,'MarkerSize',20);
+title('alpha=3')
+xlabel('sezioni ala')
+ylabel('cl')
+hold on
+plot(s,cl3, '.','MarkerSize',20);
+hold on
+CL3=0.261289
+plot(s,CL3,'.','MarkerSize',20);
+hold off
+legend('Cl vs s','cl0','CL0')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+subplot(2,3,5)
+%figure5
+filename='data/MainWing_a=4.00_v=10.00ms.txt'
+delimiterIn    = ' ';
+headerlinesIn  = 21;  
+
+airfoil_struct = importdata(filename,delimiterIn,headerlinesIn);
+fields = fieldnames(airfoil_struct);
+coord  = char(fields(1));
+
+airfoil_coord = airfoil_struct.(coord)
+s = airfoil_coord(:,1); %sezioni
+cl = airfoil_coord(:,4); %cl di ogni sezione
+npoints=length(x)
+cl4=0.480163574024491
+plot(s,cl,'MarkerSize',20);
+title('alpha=4')
+xlabel('sezioni ala')
+ylabel('cl')
+hold on
+plot(s,cl4, '.','MarkerSize',20);
+hold on
+CL4=0.348153
+plot(s,CL4,'.','MarkerSize',20);
+hold off
+legend('Cl vs s','cl0','CL0')
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+subplot(2,3,6)
+%figure6
+filename='data/MainWing_a=5.00_v=10.00ms.txt'
+delimiterIn    = ' ';
+headerlinesIn  = 21;  
+
+airfoil_struct = importdata(filename,delimiterIn,headerlinesIn);
+fields = fieldnames(airfoil_struct);
+coord  = char(fields(1));
+
+airfoil_coord = airfoil_struct.(coord)
+s = airfoil_coord(:,1); %sezioni
+cl = airfoil_coord(:,4); %cl di ogni sezione
+npoints=length(x)
+
+cl5=0.594082914770970
+plot(s,cl,'MarkerSize',20);
+title('alpha=5')
+xlabel('sezioni ala')
+ylabel('cl')
+hold on
+plot(s,cl5, '.','MarkerSize',20);
+hold on
+CL5=0.434817
+plot(s,CL5,'.','MarkerSize',20);
+hold off
+legend('Cl vs s','cl0','CL0')
+
+
+ sgtitle('NACA 0012')
+
